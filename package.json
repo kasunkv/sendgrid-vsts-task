@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/kasunkv/sendgrid-vsts-task#readme",
   "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
     "vsts-task-lib": "^2.1.0"
   },
   "devDependencies": {
@@ -42,6 +43,7 @@
     "rimraf": "^2.6.2",
     "tslint": "^5.8.0",
     "tslint-eslint-rules": "^4.1.1",
-    "tslint-microsoft-contrib": "^5.0.1"
+    "tslint-microsoft-contrib": "^5.0.1",
+    "typescript": "^2.5.3"
   }
 }
