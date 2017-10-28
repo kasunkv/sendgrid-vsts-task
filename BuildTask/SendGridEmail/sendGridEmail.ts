@@ -4,6 +4,7 @@ import SendGrid = require('@sendgrid/mail'); // tslint:disable-line
 
 import { MailData } from '@sendgrid/helpers/classes/mail'; 
 import { ResponseError } from '@sendgrid/helpers/classes';
+import { Helper } from './helper';
 
 Task.setResourcePath(path.join(__dirname, 'task.json'));
 
@@ -39,20 +40,26 @@ async function run(): Promise<void> {
     SendGrid
         .sendMultiple(emailData)
         .then(() => {
-            Task.setResult(Task.TaskResult.Succeeded, `
+            const message: string = `
                 Email(s) sent to following address(s):
                     Recipients: ${toAddresses.toString()}
-            `);
+            `;
+            
+            Helper.WriteConsoleInformation(message);
+            Task.setResult(Task.TaskResult.Succeeded, message);
         })
         .catch((err: ResponseError) => {
-            Task.setResult(Task.TaskResult.Failed, `
+            const errMessage: string = `
                 Failed to send the email(s)
                     Error Code: ${err.code}
                     Error Message: ${err.message}
                     Response Body: ${err.response.body}
                     Response Headers: ${err.response.headers}
                     Stack Trace: ${err.stack}
-            `);
+            `;
+
+            Helper.WriteConsoleInformation(errMessage);
+            Task.setResult(Task.TaskResult.Failed, errMessage);
         });
 }
 

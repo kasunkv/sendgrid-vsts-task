@@ -58,7 +58,7 @@
             "type": "multiLine",
             "properties": {
                 "resizable": true,
-                "rows" : "5"
+                "rows" : "3"
             },
             "label": "Recipient Email Addresses",
             "required": true,
