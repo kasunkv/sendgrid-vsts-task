@@ -51,7 +51,7 @@
             "label": "Sender Email Address",
             "required": true,
             "groupName": "emailConfig",
-            "helpMarkDown": "Email address of the sender."
+            "helpMarkDown": "Email address of the sender. The value can either be only the *Email Address* _(Eg. john@example.com)_ or the *Name* and the *Email Address* _(Eg. John Smith <john@example.com>)_"
         },
         {
             "name": "ToAddresses",
@@ -63,7 +63,7 @@
             "label": "Recipient Email Addresses",
             "required": true,
             "groupName": "emailConfig",
-            "helpMarkDown": "Email address(s) of the recipient(s). Use a comma (,) separated list if you have multiple email addresses. _(Eg. john@example.com, bob@example.com)_"
+            "helpMarkDown": "Email address(s) of the recipient(s). Use a comma (,) separated list if you have multiple email addresses. _(Eg. john@example.com, bob@example.com)_. The email addresses can either be only the *Email Address* _(Eg. john@example.com)_ or the *Name* and the *Email Address* _(Eg. John Smith <john@example.com>)_"
         },
         {
             "name": "Subject",
@@ -81,7 +81,7 @@
                 "rows" : "10"
             },
             "label": "Email Body",
-            "required": true,
+            "required": false,
             "groupName": "emailConfig",
             "helpMarkDown": "Contents of the email you want to send.To send HTML body add the HTML here and set the _Send as HTML_ checkbox."
         },
