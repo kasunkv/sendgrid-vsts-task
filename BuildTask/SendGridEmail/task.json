@@ -26,20 +26,73 @@
     "minimumAgentVersion": "1.92.0",
     "groups": [
         {
-            "name": "",
-            "displayName": "",
+            "name": "sendGridConfig",
+            "displayName": "Configure SendGrid",
+            "isExpanded": true
+        },
+        {
+            "name": "emailConfig",
+            "displayName": "Email Details",
             "isExpanded": true
         }       
     ],
     "inputs": [
         {
-            "name": "",
-            "type": "",
-            "label": "",
+            "name": "SendGridApiKey",
+            "type": "string",
+            "label": "SendGrid API Key",
             "required": true,
-            "defaultValue": "",
-            "groupName": "",
-            "helpMarkDown": ""
+            "groupName": "sendGridConfig",
+            "helpMarkDown": "API Key given by SendGrid. You can generate an API Key from the [SendGrid Portal](https://app.sendgrid.com/settings/api_keys)"
+        },
+        {
+            "name": "FromAddress",
+            "type": "string",
+            "label": "Sender Email Address",
+            "required": true,
+            "groupName": "emailConfig",
+            "helpMarkDown": "Email address of the sender."
+        },
+        {
+            "name": "ToAddresses",
+            "type": "multiLine",
+            "properties": {
+                "resizable": true,
+                "rows" : "5"
+            },
+            "label": "Recipient Email Addresses",
+            "required": true,
+            "groupName": "emailConfig",
+            "helpMarkDown": "Email address(s) of the recipient(s). Use a comma (,) separated list if you have multiple email addresses. _(Eg. john@example.com, bob@example.com)_"
+        },
+        {
+            "name": "Subject",
+            "type": "string",
+            "label": "Subject",
+            "required": true,
+            "groupName": "emailConfig",
+            "helpMarkDown": "Subject of the email."
+        },
+        {
+            "name": "EmailBody",
+            "type": "multiLine",
+            "properties": {
+                "resizable": true,
+                "rows" : "10"
+            },
+            "label": "Email Body",
+            "required": true,
+            "groupName": "emailConfig",
+            "helpMarkDown": "Contents of the email you want to send.To send HTML body add the HTML here and set the _Send as HTML_ checkbox."
+        },
+        {
+            "name": "SendAsHTML",
+            "type": "boolean",
+            "label": "Send as HTML",
+            "required": false,
+            "defaultValue": "false",
+            "groupName": "emailConfig",
+            "helpMarkDown": "Check this option if you want to send the contents of the email body as HTML."
         }
     ],
     "instanceNameFormat": "SendGrid Email",
