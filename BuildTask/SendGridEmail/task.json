@@ -1,0 +1,53 @@
+{
+    "$schema": "https://raw.githubusercontent.com/AArnott/vso-agent-tasks/9b41d803a/tasks.schema.json",
+    "id": "cc8ccf49-54f3-4cc0-bc57-625ed6194c26",
+    "name": "SendGridEmail",
+    "friendlyName": "SendGrid Email",
+    "description": "Visual Studio Team Services task for sending emails using SendGrid from build/release definitions",
+    "helpMarkDown": "[More Information](https://github.com/kasunkv/sendgrid-vsts-task)",
+    "category": "Utility",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "runsOn": [
+        "Agent",
+        "MachineGroup"
+    ],
+    "author": "Kasun Kodagoda",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "demands": [
+        "npm"
+    ],
+    "minimumAgentVersion": "1.92.0",
+    "groups": [
+        {
+            "name": "",
+            "displayName": "",
+            "isExpanded": true
+        }       
+    ],
+    "inputs": [
+        {
+            "name": "",
+            "type": "",
+            "label": "",
+            "required": true,
+            "defaultValue": "",
+            "groupName": "",
+            "helpMarkDown": ""
+        }
+    ],
+    "instanceNameFormat": "SendGrid Email",
+    "execution": {
+        "Node": {
+            "target": "sendGridEmail.js",
+            "argumentFormat": ""
+        }
+    },
+    "messages": { }
+}

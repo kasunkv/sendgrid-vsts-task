@@ -1,0 +1,47 @@
+{
+  "name": "sendgrid-vsts-task",
+  "version": "0.0.0",
+  "description": "Visual Studio Team Services task for sending emails using SendGrid from build/release definitions",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist && npm run clean-js && npm run clean-map",
+    "clean-js": "rimraf BuildTask/**/*.js",
+    "clean-map": "rimraf BuildTask/**/*.map",
+    "lint": "tslint -c tslint.json BuildTask\\SendGridEmail\\**\\*.ts",
+    "compile": "npm run lint && tsc --project ./BuildTask",
+    "move-npm": "mkdirp dist/BuildTask/SendGridEmail && copyfiles \"./package.json\" dist/BuildTask/SendGridEmail",
+    "move-task": "copyfiles \"./BuildTask/SendGridEmail/**/!(*.ts)\" dist",
+    "restore-prod": "pushd \"dist/BuildTask/SendGridEmail\" && npm install --only=production && popd",
+    "build": "npm run move-npm && npm run restore-prod && npm run lint && npm run compile && npm run move-task",
+    "build-clean": "npm run clean && npm run build",
+    "publish-local": "tfx build tasks upload --task-path ./dist/BuildTask/SendGridEmail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasunkv/sendgrid-vsts-task.git"
+  },
+  "keywords": [
+    "email",
+    "sendgrid",
+    "email-service",
+    "messaging"
+  ],
+  "author": "Kasun Kodagoda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasunkv/sendgrid-vsts-task/issues"
+  },
+  "homepage": "https://github.com/kasunkv/sendgrid-vsts-task#readme",
+  "dependencies": {
+    "vsts-task-lib": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.47",
+    "@types/q": "^1.0.6",
+    "copyfiles": "^1.2.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-microsoft-contrib": "^5.0.1"
+  }
+}
