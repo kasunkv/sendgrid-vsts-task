@@ -34,7 +34,7 @@
             "name": "emailConfig",
             "displayName": "Email Details",
             "isExpanded": true
-        }       
+        }
     ],
     "inputs": [
         {
@@ -58,7 +58,7 @@
             "type": "multiLine",
             "properties": {
                 "resizable": true,
-                "rows" : "3"
+                "rows": "3"
             },
             "label": "Recipient Email Addresses",
             "required": true,
@@ -74,16 +74,40 @@
             "helpMarkDown": "Subject of the email."
         },
         {
+            "name": "emailBodyFormat",
+            "type": "pickList",
+            "label": "Email Body Format",
+            "defaultValue": "InLine",
+            "required": true,
+            "options": {
+                "File": "File",
+                "InLine": "InLine"
+            },
+            "groupName": "emailConfig",
+            "helpMarkDown": "Select the email body source, file on disk or in line."
+        },
+        {
             "name": "EmailBody",
             "type": "multiLine",
             "properties": {
                 "resizable": true,
-                "rows" : "10"
+                "rows": "10"
             },
             "label": "Email Body",
             "required": false,
             "groupName": "emailConfig",
-            "helpMarkDown": "Contents of the email you want to send.To send HTML body add the HTML here and set the _Send as HTML_ checkbox."
+            "helpMarkDown": "Contents of the email you want to send.To send HTML body add the HTML here and set the _Send as HTML_ checkbox.",
+            "visibleRule": "emailBodyFormat = InLine"
+        },
+        {
+            "name": "EmailBodyFile",
+            "type": "string",
+            "label": "Email Body File",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "The email body file location",
+            "visibleRule": "emailBodyFormat = File",
+            "groupName": "emailConfig"
         },
         {
             "name": "SendAsHTML",
@@ -92,7 +116,7 @@
             "required": false,
             "defaultValue": "false",
             "groupName": "emailConfig",
-            "helpMarkDown": "Check this option if you want to send the contents of the email body as HTML."
+            "helpMarkDown": "Check this option if you want to send the contents of the email body as HTML.  NB. There is an option within SendGrid which can override this setting.  Settings -> Mail Settings -> Convert your plain text emails to HTML."
         }
     ],
     "instanceNameFormat": "SendGrid Email",
@@ -102,5 +126,5 @@
             "argumentFormat": ""
         }
     },
-    "messages": { }
+    "messages": {}
 }
