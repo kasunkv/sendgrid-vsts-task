@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import SendGrid = require('@sendgrid/mail'); // tslint:disable-line
 
-import { MailData } from '@sendgrid/helpers/classes/mail'; 
+import { MailData } from '@sendgrid/helpers/classes/mail';
 import { ResponseError } from '@sendgrid/helpers/classes';
 import { Helper } from './helper';
 

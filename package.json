@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/kasunkv/sendgrid-vsts-task#readme",
   "dependencies": {
+    "@sendgrid/helpers": "^6.2.1",
     "@sendgrid/mail": "^6.2.1",
     "vsts-task-lib": "^2.4.0"
   },
