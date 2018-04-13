@@ -14,7 +14,8 @@
     "restore-prod": "pushd \"dist/BuildTask/SendGridEmail\" && npm install --only=production && popd",
     "build": "npm run move-npm && npm run restore-prod && npm run lint && npm run compile && npm run move-task",
     "build-clean": "npm run clean && npm run build",
-    "publish-local": "tfx build tasks upload --task-path ./dist/BuildTask/SendGridEmail"
+    "publish-local": "tfx build tasks upload --task-path ./dist/BuildTask/SendGridEmail",
+    "package": "tfx extension create --manifest-globs vss-extension.json --root ./"
   },
   "repository": {
     "type": "git",
@@ -33,17 +34,17 @@
   },
   "homepage": "https://github.com/kasunkv/sendgrid-vsts-task#readme",
   "dependencies": {
-    "@sendgrid/mail": "^6.1.4",
-    "vsts-task-lib": "^2.1.0"
+    "@sendgrid/mail": "^6.2.1",
+    "vsts-task-lib": "^2.4.0"
   },
   "devDependencies": {
-    "@types/node": "^8.0.47",
-    "@types/q": "^1.0.6",
+    "@types/node": "^8.10.7",
+    "@types/q": "^1.5.0",
     "copyfiles": "^1.2.0",
     "rimraf": "^2.6.2",
-    "tslint": "^5.8.0",
+    "tslint": "^5.9.1",
     "tslint-eslint-rules": "^4.1.1",
-    "tslint-microsoft-contrib": "^5.0.1",
-    "typescript": "^2.5.3"
+    "tslint-microsoft-contrib": "^5.0.3",
+    "typescript": "^2.8.1"
   }
 }
