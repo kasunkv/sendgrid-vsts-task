@@ -101,7 +101,7 @@
         },
         {
             "name": "EmailBodyFile",
-            "type": "string",
+            "type": "filePath",
             "label": "Email Body File",
             "defaultValue": "",
             "required": false,
