@@ -19,8 +19,8 @@ async function run(): Promise<string> {
             const emailSubject: string = Task.getInput('Subject', true);
             const sendAsHtml: boolean = Task.getBoolInput('SendAsHTML');
             const emailBodyFormat: string = Task.getInput('emailBodyFormat', true);
-            const emailBody: string = Task.getInput('EmailBody', true);
-            const emailBodyFile: string = Task.getInput('EmailBodyFile', true);
+            const emailBody: string = Task.getInput('EmailBody', false);
+            const emailBodyFile: string = Task.getInput('EmailBodyFile', false);
 
             Helper.WriteConsoleInformation(`FromAddress: [${fromAddress}]`);
             Helper.WriteConsoleInformation(`ToAddresses: [${toAddresses.join(', ')}]`);
