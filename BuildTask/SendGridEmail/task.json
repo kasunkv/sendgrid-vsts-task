@@ -81,7 +81,7 @@
             "required": true,
             "options": {
                 "File": "File",
-                "InLine": "InLine"
+                "InLine": "In Line"
             },
             "groupName": "emailConfig",
             "helpMarkDown": "Select the email body source, file on disk or in line."
