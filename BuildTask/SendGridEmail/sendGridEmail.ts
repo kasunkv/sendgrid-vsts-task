@@ -2,6 +2,7 @@ import * as Task from 'vsts-task-lib';
 import * as path from 'path';
 import * as fs from 'fs';
 import SendGrid = require('@sendgrid/mail'); // tslint:disable-line
+import * as sentry from '@sentry/node';
 
 import { MailData } from '@sendgrid/helpers/classes/mail';
 import { ResponseError } from '@sendgrid/helpers/classes';
@@ -13,6 +14,12 @@ async function run(): Promise<string> {
     const promise = new Promise<string>(async (resolve, reject) => {
 
         try {
+
+            sentry.init({
+                dsn: 'SENTRY_DSN',
+                release: 'TASK_RELEASE_VERSION'
+            });
+
             const sendGridApiKey: string = Task.getInput('SendGridApiKey', true);
             const fromAddress: string = Task.getInput('FromAddress', true);
             let toAddresses: string[] = Task.getDelimitedInput('ToAddresses', ',', true);
@@ -108,5 +115,6 @@ run()
         Task.setResult(Task.TaskResult.Succeeded, result);
     })
     .catch(err => {
+        sentry.captureException(err);
         Task.setResult(Task.TaskResult.Failed, err);
     });
