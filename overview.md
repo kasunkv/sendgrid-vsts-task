@@ -1,11 +1,11 @@
-SendGrid Email Task for Visual Studio Team Services to send emails from a build/release definition
+SendGrid Email Task for Azure DevOps to send emails from a build/release definition
 
 ## Prerequisites
 * You need to have a SendGrid Account created with an appropriate plan. You can learn more about SendGrid from the [SendGrid Official Website](https://sendgrid.com/pricing/).
 * Obtain the API Key required to access the SendGrid API by following the instructions on the [Official Documentation](https://app.sendgrid.com/settings/api_keys).
 
 ### Add the SendGrid Email Task
-Install the SendGrid Email Task in to your Visual Studio Team Services account and search for the task in the available tasks. The task will appear in the _Utility_ section of the task list. Add it to your build/release task.
+Install the SendGrid Email Task in to your Azure DevOps account and search for the task in the available tasks. The task will appear in the _Utility_ section of the task list. Add it to your build/release task.
 
 ![Add SendGrid Email Task](https://raw.githubusercontent.com/kasunkv/sendgrid-vsts-task/master/screenshots/screenshot-1.png)
 
