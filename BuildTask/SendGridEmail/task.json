@@ -3,7 +3,7 @@
     "id": "cc8ccf49-54f3-4cc0-bc57-625ed6194c26",
     "name": "SendGridEmail",
     "friendlyName": "SendGrid Email",
-    "description": "Visual Studio Team Services task for sending emails using SendGrid from build/release definitions",
+    "description": "Azure DevOps task for sending emails using SendGrid from build/release definitions",
     "helpMarkDown": "[More Information](https://github.com/kasunkv/sendgrid-vsts-task)",
     "category": "Utility",
     "visibility": [

@@ -1,7 +1,7 @@
 {
   "name": "sendgrid-vsts-task",
   "version": "0.0.0",
-  "description": "Visual Studio Team Services task for sending emails using SendGrid from build/release definitions",
+  "description": "Azure DevOps task for sending emails using SendGrid from build/release definitions",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist && npm run clean-js && npm run clean-map",

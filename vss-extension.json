@@ -9,7 +9,7 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],    
-    "description": "Visual Studio Team Services task for sending emails using SendGrid from build/release definitions",
+    "description": "Azure DevOps task for sending emails using SendGrid from build/release definitions",
     "categories": [
         "Build and release"
     ],
