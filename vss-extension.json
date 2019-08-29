@@ -31,6 +31,9 @@
         },
         "license": {
             "path": "LICENSE.md"
+        },
+        "privacypolicy": {
+            "path": "privacy-policy.md"
         }
     },
     "links": {
